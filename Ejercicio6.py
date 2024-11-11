@@ -2,8 +2,8 @@
 binario y otra que convierta un número binario en decimal'''
 def binario_decimal(x):
     '''Esta función convierte un número decimal en 
-    binario (recibe un numero entero) y devuelve una
-    string con el numero binario'''
+    binario (recibe un número entero) y devuelve una
+    string con el número binario'''
     binario = []
     aux = 0
     res = ""
@@ -16,14 +16,17 @@ def binario_decimal(x):
     for i in range(len(binario)):
         res += str(binario[i])
     return res
-print(binario_decimal(12))
 def decimal_binario(y):
-    '''Esta función convierte un número decimal en 
-    binario (recibe un numero entero) y devuelve una
-    string con el numero binario'''
+    '''Esta función convierte un número binario en 
+    decimal (recibe un string) y devuelve un int
+    con el número decimal'''
     decimal = 0
     for i in range(len(y)):
-        if y[i] == 1:
-            decimal += 2 ** (len(y) - i)
+        if int(y[i]) == 1:
+            decimal += 2 ** (len(y) - 1 - i)
     return decimal
-print(decimal_binario(binario_decimal(12)))
+print(binario_decimal(48))
+print(decimal_binario("110000"))
+print(binario_decimal(decimal_binario("110000")))
+print(decimal_binario(binario_decimal(48)))
+
